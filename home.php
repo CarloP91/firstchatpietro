@@ -21,8 +21,7 @@ session_start();
 
     <input type="hidden" id="mittente" value="<?php echo $_SESSION['login_user']; ?>">
     <input type="textarea" id="messaggio">
-    <button id="send_msg">INVIA</button>
-
-    
+    <button id="send_msg">INVIA</button>   
+           
 </body>
 </html>
