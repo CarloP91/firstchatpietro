@@ -1,160 +1,64 @@
-/* ELEMENTI BASE STRUTTURA */
-body{
-    background-color: #d9dbd4;
+/*Chat containers */
+.container {
+    border: 2px solid #1a2ee9;
+    background-color: #2aa4f5;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
   }
-  header{
+  
+  /* Darker chat container */
+  .darker {
+    border-color: rgb(46, 102, 224);
+    background-color: rgb(221, 221, 221);
+  }
+  
+  /* Clear floats */
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Style images */
+  .container img {
+    float: left;
+    max-width: 60px;
     width: 100%;
-    z-index: -1;
-    position: fixed;
-    top: 0px;
-    background-color: #10ac84;
-    height: 90px;
-  }
-  .col-lg-8, .col-lg-4{
-    height: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
   }
   
-  
-  
-  /* BARRA DEL PROFILO */
-  .myProfile, .titleChat,.userKeyboard{
-    height: 70px;
-  }
-  .myProfile img, .titleChat img{
-    height: 50px;
-    width: 50px;
-  }
-  .myProfile, .titleChat{
-    background-color: #eee;
-  }
-  .symbols i{
-    margin: 0 15px;
-    cursor: pointer;
+  /* Style the right image */
+  .container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
   }
   
-  
-  /* BARRA DI RICERCA CONTATTI */
-  .searchChat{
-    height: 60px;
-    background-color: #f8f8f8;
-    padding-right: 15px;
-  }
-  .searchChat input{
-    width: 95%;
-    border: none;
-    border-radius: 10px;
-    padding: 5px 5px 5px 30px;
-  }
-  .searchChat::before{
-    color: grey;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: "\f002";
-    position: relative;
-    left: 20px;
+  /* Style time text */
+  .time-right {
+    float: right;
+    color: black;
   }
   
-  
-  /* CONTAINER CON LE CHAT */
-  .container_Chat{
-    overflow-y: scroll;
-    height: 500px;
+  /* Style time text */
+  .time-left {
+    float: right;
+    color: black;
   }
-  .container_Chat .privateChat:last-child{
-    border:none;
-  }
-  .privateChat{
-    padding: 15px;
-    border-bottom: 1px solid #d9dbd4;
-    height: 100px;
-  }
-  .privateChat img{
-    height: 100%;
-    width: auto;
+
+  #written {
+      margin-left: 240px;
+      width: 40%;
+      display: inline;
+      
+      border-radius: 5px;
+   
   }
   
-  
-  /* BARRA DELLA CHAT APERTA */
-  .openChat{
-    border-left: 1px solid #d9dbd4;
-  }
-  .chatOptions i{
-    padding: 10px;
-    color: grey;
-    font-size: 20px;
-  }
-  
-  
-  /* CONVERSAZIONE DELLA CHAT APERTA */
-  .containChat{
-    background-image: url("http://i.imgur.com/6Pl4okH.jpg");
-    height: 500px;
-    overflow-y: scroll;
-  }
-  
-  .conversation{
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .active{
-    display: block;
-  }
-  .new-message{
-    border-radius: 10px;
-    min-width: 15%;
-    max-width:75%;
-    padding: 10px;
-    margin: 15px 0;
-    position: relative;
-  }
-  .new-message.sendbyCPU{
-    background-color: white;
-    align-self: flex-start;
-  }
-  .new-message.sendbyUser{
-    background-color: #dcf8c6;
-    align-self: flex-end;
-  }
-  .text-message{
-    margin-right: 15px;
-  }
-  .info-message {
-    font-size: 10px;
-    position: relative;
-    top: 15px;
-    left: 5px;
-    margin-bottom: 5px;
-  }
-  .message-options{
-    display: none;
-      background: white;
-      box-shadow: 2px 2px 20px 1px;
-      position: absolute;
-      bottom: -110px;
-    right: 0;
-      width: 150px;
-    padding: 10px;
-  }
-  .opzioni span{
-    cursor: pointer;
-    width: 50%;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  /* BARRA DOVE SI SCRIVE IL MESSAGGIO */
-  .userKeyboard{
-    background-color: #f8f8f8;
-  }
-  .userKeyboard input{
-    width: 80%;
-    padding: 6px;
-    border: none;
-    border-radius: 10px;
-  }
-  .userKeyboard i{
-    font-size: 25px;
-    cursor: pointer;
-  }
+  #send {
+      width: 10%;
+      margin: 10px auto;
+      border-radius: 5px;
+  } 
