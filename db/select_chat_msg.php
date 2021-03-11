@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo '<div class="container darker">'. '<img src="img\hacker.png">' ." - USERNAME: " . $row["msg_mitt"]. " MESSAGGIO" . $row["msg_mess"]. "<br>". "</div>";
+    echo '<div class="container darker">'. '<img src="img\hacker.png">' ." - <strong>USERNAME:</strong> " . $row["msg_mitt"]. " MESSAGGIO" . $row["msg_mess"]. "<br>". "</div>";
 
 
 
