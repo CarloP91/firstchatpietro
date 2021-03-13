@@ -24,75 +24,11 @@ session_start();
  <div class="d-flex justify-content-center">
     <input type="hidden" id="mittente" value="<?php echo $_SESSION['login_user']; ?>">
     <input type="textarea" id="messaggio">
-    <button onclick="autoChat()" id="send_msg">INVIA</button>
+    <button id="send_msg">INVIA</button>
     </div>
-
-    d
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/insert_msg.js"></script>
-<script>
-
-function select_msg() {
-  var nomeMittente = document.getElementById("mittente").value;
-
-  $.ajax({
-    url: "db/select_chat_msg.php", 
-    crossDomain: true, 
-    dataType: "JSON",
-    success: function(data, stato) {
-      console.log("json passato" + data);
-      var str = "ciao";
-
-      for(var i = 0; i < data.length; i++) {
-        console.log(data[i]);
-
-
-        if(data[i].mittente === nomeMittente) {
-          str = str + 
-          '<div style="d-flex justify-content-right">'
-            + data[i].mittente 
-            + data[i].testo 
-            + data[i].data 
-            
-          
-          + '</div>'
-        }else {
-          str = str + 
-          '<div style="d-flex justify-content-right">'
-          
-            + data[i].mittente 
-            + data[i].testo 
-            + data[i].data 
-            
-          
-          + '</div>'
-        }
-
-        $("#divChat").html('str');
-      },
-
-      error: function(data, stato) {
-        console.log(stato + "non sto funzionando");
-      }
- 
-    }
-
-
-
-
-  });
-
-  
-}
-
-$(document).ready(function() {
-  select_msg();
- setInterval(select_msg, 1000);
-
-  
-});
-
-</script>
+<script src="js/select_msg.js"></script>
 </html>

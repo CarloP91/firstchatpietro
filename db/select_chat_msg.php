@@ -5,25 +5,24 @@ $password = "gezr6w9b05fx3x8i";
 $dbname = "rx2te87mm7vnu0ny";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 $sql = "SELECT * FROM tbl_msg";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo '<div class="container darker">'. '<img src="img\hacker.png">' ." - <strong>USERNAME:</strong> " . $row["msg_mitt"]. " MESSAGGIO" . $row["msg_mess"]. "<br>". "</div>";
+$result = mysqli_query($conn, $sql);
 
+$string = "[";
+	while ($row = mysqli_fetch_array($result)) {
+		$string = $string . '{"mittente": "'. $row["msg_mitt"] .'", "testo": "' . $row["msg_mess"]  .'"},';
+	}
+	mysqli_close($conn);
+	$string = rtrim($string, ",");
+	$string = $string . ']';
+	echo $string;
 
-
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-?>
+	?>
