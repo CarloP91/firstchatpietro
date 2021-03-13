@@ -11,20 +11,26 @@ session_start();
      <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
+<style>
+
+
+</style>
 
     <title>HOME PAGE CHAT PIETRO</title>
 </head>
-<body>
+<body onload="autoChat()">
 
 <h1>BENVENUTO <?php echo $_SESSION['login_user']; ?></h1> 
 
  <!-- INIZIO MAIN DIV CHAT -->
+ <?php include "db/select_chat_msg.php" ?>
 
+ <div class="d-flex justify-content-center">
     <input type="hidden" id="mittente" value="<?php echo $_SESSION['login_user']; ?>">
     <input type="textarea" id="messaggio">
     <button id="send_msg">INVIA</button>
-
-    <?php include "db/select_chat_msg.php" ?>
+    </div>
+ 
 
 mod
 
@@ -53,5 +59,15 @@ $(document).ready(function(){
     }
   });
 });
+
+$(document).ready(function() {
+        autoChat();
+        setInterval(autoChat,1000);
+});
+
+
+  
+
+
 </script>
 </html>
