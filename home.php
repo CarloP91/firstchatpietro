@@ -16,7 +16,7 @@ session_start();
 </head>
 <body>
 
-<h1>BENVENUTO <?php echo $_SESSION['login_user']; ?></h1> 
+<h1>BENVENUTO <?php echo $_SESSION['login_user']; ?></h1>  <a href="logout.php">LOGOUT</a>
 
  <!-- INIZIO MAIN DIV CHAT -->
   <div id="divChat"></div>
