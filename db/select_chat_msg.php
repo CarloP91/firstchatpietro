@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $sql);
 
 $string = "[";
 	while ($row = mysqli_fetch_array($result)) {
-		$string = $string . '{"mittente": "'. $row["msg_mitt"] .'", "testo": "' . $row["msg_mess"]  .'"},';
+		$string = $string . '{"mittente": "'. $row["msg_mitt"] .'", "testo": "' . $row["msg_mess"]  .'" , "avatar": "' . $row["default_img"]  .'"},';
 	}
 	mysqli_close($conn);
 	$string = rtrim($string, ",");
