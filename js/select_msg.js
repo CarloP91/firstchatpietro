@@ -28,7 +28,7 @@
                } else {
                 str = str
           + '<div class="container">'
-          + '<div class="container col border-dark" style="background-color:yellow"><img id="avatar" src="img/hacker.png" alt="Avatar">'
+          + '<div class="container col border-dark" style="background-color:yellow"><img id="avatar" src="img/profile.png" alt="Avatar">'
           + '<strong>' + data[i].mittente + '</strong>' 
           + '<br>'
           + data[i].testo 

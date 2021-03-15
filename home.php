@@ -15,17 +15,23 @@ session_start();
     <title>HOME PAGE CHAT PIETRO</title>
 </head>
 <body>
-
+<div class="float-end">
+<button type="button" class="btn btn-secondary btn-sm mt-10" onclick="window.location.href='areapersonale/settings.php'">Area Personale</button>
+</div><br>
 <h1>BENVENUTO <?php echo $_SESSION['login_user']; ?></h1>  <a href="logout.php">LOGOUT</a>
 
  <!-- INIZIO MAIN DIV CHAT -->
-  <div id="divChat"></div>
+
+  <div id="divChat">
+ </div>
   
  <div class="d-flex justify-content-center">
     <input type="hidden" id="mittente" value="<?php echo $_SESSION['login_user']; ?>">
     <input type="textarea" id="messaggio">
-    <button id="send_msg">INVIA</button>
+    <button type="button" id="send_msg" class="btn btn-primary">Invia</button>
+
     </div>
+    
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
