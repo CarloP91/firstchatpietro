@@ -11,6 +11,11 @@
     <title>Document</title>
 </head> 
 <body>
+    <form action="" method="POST">
+    <label for="cambia immagini">Immagini</label>
+    <input type="file" name="upPhoto" id="upPhoto">
+    <input type="submit" name="upFile">
+    <form>
   
 <!-- IMMAGINE PROFILO
 MODIFICA USER
