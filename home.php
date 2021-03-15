@@ -10,13 +10,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 
     <title>HOME PAGE CHAT PIETRO</title>
 </head>
 <body>
 <div class="float-end">
-<button type="button" class="btn btn-secondary btn-sm mt-10" onclick="window.location.href='areapersonale/settings.php'">Area Personale</button>
+<button type="button" class="btn btn-secondary btn-sm prova" onclick="window.location.href='areapersonale/settings.php'">Area Personale</button>
 </div><br>
 <h1>BENVENUTO <?php echo $_SESSION['login_user']; ?></h1>  <a href="logout.php">LOGOUT</a>
 
