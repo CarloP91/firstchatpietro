@@ -16,7 +16,7 @@ session_start();
 </head>
 <body>
 <div class="float-end">
-<button type="button" class="btn btn-secondary btn-sm prova" onclick="window.location.href='areapersonale/settings.php'">Area Personale</button>
+<button type="button" class="btn btn-secondary btn-sm prova" onclick="window.location.href='areapersonale/modifyprofile.php'">Area Personale</button>
 </div><br>
 <h1>BENVENUTO <?php echo $_SESSION['login_user']; ?></h1>  <a href="logout.php">LOGOUT</a>
 

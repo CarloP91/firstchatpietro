@@ -10,23 +10,38 @@
     <title>AREA PERSONALE - SETTING</title>
 </head> 
 <body>
-<!--     <form action="../db/upload_img.php" method="POST" enctype="multipart/form-data">
-    <label for="cambia immagini">Immagini</label>
-    <input type="file" name="upPhoto" id="upPhoto">
-    <input type="submit" name="upFile">
-    <form> -->
 
-    <form action="../db/modify_usr.php" method="get">
-    <label for="mod_usr">MODIFICA USERNAME:</label> <br>
-    <input type="hidden" name="id_usr" value="<?php echo $row["id"]?>">
-    <input type="text" name="modify_usr">
-    <input type="submit" name="sub_mod_usr">
-    </form>
+<input type="hidden" id="id_val" value="<?php echo $id;?>">
+<button onclick="change_pic()">PIC</button>
+<button onclick="change_usr()">MOD USR</button>
+
+<div id="print"></div>   
+
   
 <!-- IMMAGINE PROFILO
 MODIFICA USER
 MODIFICA PASSWORD -->
-
     
 </body>
+<script>
+function change_pic() {
+document.getElementById("print").innerHTML =  
+    '<form action="../db/upload_img.php" method="POST" enctype="multipart/form-data">' +
+    '<label for="cambia immagini">Immagini</label>' +
+    '<input type="file" name="upPhoto" id="upPhoto">' +
+    '<input type="submit" name="upFile">' 
+    '<form>';
+}
+var id = document.getElementById("id_val").value;
+console.log(id);
+function change_usr() {
+document.getElementById("print").innerHTML =  
+    '<form action="../db/modify_usr.php" method="get">' + 
+    '<label for="mod_usr">MODIFICA USERNAME:</label> <br>' +
+    '<input type="hidden" name="id_usr" value="' + id +'">' +
+    '<input type="text" name="modify_usr">' +
+    '<input type="submit" name="sub_mod_usr">' +
+    '</form>';
+}
+</script>
 </html> 
