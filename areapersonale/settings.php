@@ -1,6 +1,3 @@
-<?php 
-session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +18,7 @@ session_start();
 
     <form action="../db/modify_usr.php" method="get">
     <label for="mod_usr">MODIFICA USERNAME:</label> <br>
-    <input type="hidden" name="id_usr" value="1">
+    <input type="hidden" name="id_usr" value="<?php echo $row["id"]?>">
     <input type="text" name="modify_usr">
     <input type="submit" name="sub_mod_usr">
     </form>
@@ -32,4 +29,4 @@ MODIFICA PASSWORD -->
 
     
 </body>
-</html>
+</html> 

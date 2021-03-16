@@ -1,4 +1,7 @@
-<?php
+<?php 
+session_start();
+$usr = $_SESSION['login_user'];
+
 $servername = "d3y0lbg7abxmbuoi.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
 $username = "otxnyvygp21lkomw";
 $password = "gezr6w9b05fx3x8i";
@@ -10,15 +13,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM accounts";
-$array1 = array();
+$sql = "SELECT * FROM accounts WHERE `username` = '$usr'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    $array1 = array_merge($array1, array_map('trim', explode(",", $row['id'])));
-    $id = $row["id"];
+   echo include_once "settings.php";
   }
 } else {
   echo "0 results";
