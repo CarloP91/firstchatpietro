@@ -12,10 +12,13 @@
 <body>
 
 <input type="hidden" id="id_val" value="<?php echo $id;?>">
+<!-- <input type="hidden" id="id_val" value="<?php echo $id;?>"> -->
 <button onclick="change_pic()">PIC</button>
 <button onclick="change_usr()">MOD USR</button>
+<button onclick="change_pass()">MOD Pass</button>
 
 <div id="print"></div>   
+
 
   
 <!-- IMMAGINE PROFILO
@@ -41,6 +44,17 @@ document.getElementById("print").innerHTML =
     '<input type="hidden" name="id_usr" value="' + id +'">' +
     '<input type="text" name="modify_usr">' +
     '<input type="submit" name="sub_mod_usr">' +
+    '</form>';
+}
+var changePass = document.getElementById("id_val").value; 
+console.log(changePass);
+function change_pass() {
+    document.getElementById("print").innerHTML =
+'<form action="../db/modifypassword.php" method="get">'+
+'<label for="mod:pass">MODIFICA PASSWORD </label><br>' +
+'<input type="hidden" name="id_usr" value="' + id +'">' +
+'<input type="text" name="modify_pass">' +
+'<input type="submit" name="sub_mod_pass">' +
     '</form>';
 }
 </script>

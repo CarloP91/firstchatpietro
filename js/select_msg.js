@@ -30,10 +30,11 @@
           + '<strong>' + data[i].mittente + '</strong>' 
           + '<br>'
           + data[i].testo 
+          + '<a href="../db/delete_msg.php">X</a>'
           + '</div>'
           + '</div>'
                }
-
+         
            
          }
 
