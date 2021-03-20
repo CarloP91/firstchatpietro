@@ -21,6 +21,7 @@
           + '<strong>' + data[i].mittente + '</strong>' 
           + '<br>'
           + data[i].testo 
+          + '<a href="../db/delete_msg.php?id_msg=' + data[i].id_msg + '">X</a>' //DA FAR DIVENTARE PIU' BELLO
           + '</div>'
           + '</div>'
                } else {
@@ -30,7 +31,6 @@
           + '<strong>' + data[i].mittente + '</strong>' 
           + '<br>'
           + data[i].testo 
-          + '<a href="../db/delete_msg.php">X</a>'
           + '</div>'
           + '</div>'
                }

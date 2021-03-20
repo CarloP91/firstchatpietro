@@ -4,9 +4,9 @@ $username = "otxnyvygp21lkomw";
 $password = "gezr6w9b05fx3x8i";
 $dbname = "rx2te87mm7vnu0ny";
 
-$id_usr = $_GET["id_usr"];
+$id_msg = $_GET["id_msg"];
 
-echo $id_usr;
+/* echo $id_msg; */
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -16,9 +16,10 @@ if (!$conn) {
 }
 
 // sql to delete a record
-$sql = "DELETE FROM tbl_msg WHERE id=1";
+$sql = "DELETE FROM tbl_msg WHERE idtbl_msg=$id_msg";
 
 if (mysqli_query($conn, $sql)) {
+  header("location: ../home.php");
   echo "Record deleted successfully";
 } else {
   echo "Error deleting record: " . mysqli_error($conn);
